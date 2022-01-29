@@ -16,25 +16,23 @@ export function InfoPage() {
   //     .then((info) => console.log(info));
   // };
 
-  useEffect(()=>{
-    const url2 = "https://61e2dd193050a100176822d2.mockapi.io/details/100";
+  useEffect(() => {
+    const url2 = `https://61e2dd193050a100176822d2.mockapi.io/details/${id}`;
 
-fetch(url2)
-  .then((data) => data.json())
-  .then((movie) => {
-    setMovieInfo(movie);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+    fetch(url2)
+      .then((data) => data.json())
+      .then((movie) => {
+        setMovieInfo(movie);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [id]);
 
   console.log(movieInfo);
 
   return (
-  
     <div className="info-headings">
-      <>
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography sx={{ fontSize: 24 }} color="text.secondary" gutterBottom>
@@ -43,74 +41,70 @@ fetch(url2)
         </CardContent>
       </Card>
 
-      
-
-    
-
-      
-
-    
-        <div className="info-details">
-          <div className="info-image">
-            {movieInfo &&
-              movieInfo.images.map((sub) => (
-                <img
-                  key={sub.id}
-                  className="info-images"
-                  src={sub.url}
-                  alt="Spider-man images"
-                />
+      {movieInfo && (
+        <>
+          <div className="info-details">
+            <div className="info-image">
+              {movieInfo &&
+                movieInfo?.images?.map((sub) => (
+                  <img
+                    key={sub.id}
+                    className="info-images"
+                    src={sub.url}
+                    alt="Spider-man images"
+                  />
+                ))}
+            </div>
+            <div className="info-cast">
+              {movieInfo?.cast?.map((sub) => (
+                <div key={sub.id}>
+                  <img className="cast-images" src={sub.image} alt={sub.name} />
+                  <Typography
+                    className="cast-name"
+                    sx={{ fontSize: 15 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    {sub.name}
+                  </Typography>
+                  <Typography
+                    className="cast-role"
+                    sx={{ fontSize: 12 }}
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    {sub.role}
+                  </Typography>
+                </div>
               ))}
+            </div>
           </div>
-          <div className="info-cast">
-            {movieInfo.cast.map((sub) => (
-              <div key={sub.id}>
-                <img className="cast-images" src={sub.image} alt={sub.name} />
-                <Typography
-                  className="cast-name"
-                  sx={{ fontSize: 15 }}
-                  color="text.secondary"
-                  gutterBottom
-                >
-                  {sub.name}
-                </Typography>
+          <div className="info-genre">
+            {movieInfo?.genre?.map((sub) => (
+              <div className="badge" key={sub.id}>
                 <Typography
                   className="cast-role"
                   sx={{ fontSize: 12 }}
                   color="text.secondary"
                   gutterBottom
                 >
-                  {sub.role}
+                  {sub.type}
                 </Typography>
               </div>
             ))}
           </div>
-        </div>
-        <div className="info-genre">
-          {movieInfo.genre.map((sub) => (
-            <div className="badge" key={sub.id}>
-              <Typography
-                className="cast-role"
-                sx={{ fontSize: 12 }}
-                color="text.secondary"
-                gutterBottom
-              >
-                {sub.type}
-              </Typography>
-            </div>
-          ))}
-        </div>
-        <div className="info-summary">
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            {movieInfo.summary}
-          </Typography>
-        </div>
-
-      
-        
-
-     </>
+          <div className="info-summary">
+            <Typography
+              sx={{ fontSize: 14 }}
+              color="text.secondary"
+              gutterBottom
+            >
+              {movieInfo.summary}
+            </Typography>
+          </div>
+        </>
+      )}
     </div>
-    
   );
 }
+//constions of map? 
