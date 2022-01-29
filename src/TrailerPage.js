@@ -7,15 +7,24 @@ import Typography from '@mui/material/Typography';
 export function TrailerPage() {
   const { id } = useParams();
   const [movieTrailer, setMovieTrailer] = useState([]);
-  const getMovie = () => {
-    fetch(`https://61e2dd193050a100176822d2.mockapi.io/details/${id}`,
+  const [loading, setLoading] = useState(false);
+
+  const getMovie =  () => {
+     fetch(`https://61e2dd193050a100176822d2.mockapi.io/details/${id}`,
       { method: "GET" })
       .then((data) => data.json())
-      .then((trailers) => setMovieTrailer(trailers));
+      .then((trailers) => setMovieTrailer(trailers))
+      .catch((err)=>console.log(err))
+      .finally(()=>setLoading(false));
   };
-  console.log(movieTrailer.trailer)
+
   useEffect(getMovie, []);
+ const styles ={color:"white"}
+  if(loading){
+    return <p style={styles}>Data is Loading.....</p>
+  }
   return (
+    
     <div className="trailer-details">
         <Card sx={{ minWidth: 275}}>
       <CardContent>
@@ -34,17 +43,8 @@ export function TrailerPage() {
       allowfullscreen>
       </iframe>
       </div>
-      <div className="info-summary">
-       <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {movieTrailer.summary} 
-        </Typography>
-       </div>
-       <div className="info-genre">
-         {movieTrailer.genre.map((sub)=><div className="badge">
-                  <Typography className="cast-role" sx={{ fontSize: 12 }} color="text.secondary" gutterBottom>
-                  {sub.type}
-                </Typography></div>)} 
-       </div> 
+
+
     </div>
   );
 }

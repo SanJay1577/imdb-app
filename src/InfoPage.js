@@ -28,15 +28,16 @@ export function InfoPage() {
        </Card>
    
        <div className="info-details">
-         <div className= "info-image">
-               {movieInfo.images.map((sub)=> <img className = "info-images" src = {sub.url}
+
+          <div className= "info-image">
+               {movieInfo.images.map((sub)=> <img key ={sub.id} className = "info-images" src = {sub.url}
             alt = "Spider-man images"/>)}
             </div>
             
          
              <div className= "info-cast">
                {movieInfo.cast.map((sub)=>
-               <div>
+               <div key ={sub.id}>
                <img className= "cast-images" src ={sub.image}
                alt ={sub.name}/>
              <Typography className="cast-name" sx={{ fontSize: 15 }} color="text.secondary" gutterBottom>
@@ -48,9 +49,22 @@ export function InfoPage() {
           </div>)}
               
              </div>
+
        </div>
 
+       <div className="info-genre">
+          {movieInfo.genre.map((sub)=><div className="badge" key ={sub.id}>
+                   <Typography className="cast-role" sx={{ fontSize: 12 }} color="text.secondary" gutterBottom>
+                   {sub.type}
+                 </Typography></div>)} 
+        </div> 
 
-    </div> 
+        <div className="info-summary">
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+           {movieInfo.summary} 
+         </Typography>
+        </div>
+
+     </div> 
   );
 }
