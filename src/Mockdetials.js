@@ -6,6 +6,7 @@ import FavoriteSharpIcon from '@mui/icons-material/FavoriteSharp';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useHistory } from "react-router-dom";
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 
 export function Mockdetials({ name, cover, rating, id}) {
@@ -29,8 +30,14 @@ export function Mockdetials({ name, cover, rating, id}) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" onClick={()=>{history.push(`/info-page/${id}`)}}>More Info</Button>
-          <Button size="small" onClick={()=>{history.push(`/trailer-page/${id}`)}}>Watch Trailer</Button>
+   
+            <Button size="small" color = "warning" onClick={()=>{history.push(`/info-page/${id}`)}}>More info</Button>
+    
+          
+     
+          <Button size="small" color = "warning" onClick={()=>{history.push(`/trailer-page/${id}`)}}>Watch Trailer</Button>
+
+          
         </CardActions>
       </Card>
 

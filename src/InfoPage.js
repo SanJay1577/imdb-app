@@ -3,33 +3,41 @@ import { useEffect, useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export function InfoPage() {
   const { id } = useParams();
   const [movieInfo, setMovieInfo] = useState({});
-  // const getMovie = () => {
-  //   // https://61e2dd193050a100176822d2.mockapi.io/details/${id}
-  //   fetch(``, {
-  //     method: "GET",
-  //   })
-  //     .then((data) => data.json())
-  //     .then((info) => console.log(info));
-  // };
+  const[ratings, setRatings] = useState({});
 
-  useEffect(() => {
-    const url2 = `https://61e2dd193050a100176822d2.mockapi.io/details/${id}`;
 
-    fetch(url2)
-      .then((data) => data.json())
-      .then((movie) => {
-        setMovieInfo(movie);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [id]);
+  useEffect(()=>{ 
+    const getMovies =()=>{
+      fetch(`https://61e2dd193050a100176822d2.mockapi.io/details/${id}`,
+      {method:"GET"})
+      .then((data)=>data.json())
+      .then((movie)=>setMovieInfo(movie));
+      
+ };
+ getMovies()
 
-  console.log(movieInfo);
+ const getratings=()=>{
+   fetch(`https://61e2dd193050a100176822d2.mockapi.io/ratings/${id}`,
+   {method:"GET"})
+   .then((res)=>res.json())
+   .then((rating)=>setRatings(rating));
+ };
+
+ getratings()
+
+   },[]);
+
+   const history = useHistory();
+
+
 
   return (
     <div className="info-headings">
@@ -103,6 +111,33 @@ export function InfoPage() {
             </Typography>
           </div>
         </>
+      )}
+   {ratings&&(
+      <div >
+          <ButtonGroup variant="contained"  aria-label="outlined primary button group">
+                <Button color = "warning" onClick={()=>history.push(`/review-page/${id}`)}>Add review</Button>
+            </ButtonGroup>
+            <Card className="review-div">
+              {ratings?.rating?.map((sub)=>
+              <div className="review-div">
+                <Typography key={sub.id}
+              sx={{ fontSize: 20 }}
+              color="text.secondary"
+              gutterBottom
+            >
+              {sub.user} 
+               </Typography>
+               <Typography key={sub.id}
+              sx={{ fontSize: 14 }}
+              color="text.secondary"
+              gutterBottom
+            >
+               {sub.comment}
+               </Typography>
+            </div>)}
+            </Card> 
+
+      </div>
       )}
     </div>
   );

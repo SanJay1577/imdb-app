@@ -3,7 +3,7 @@
     "id": "100",
     "name": "Spider-Man",
     "rating": 7.3,
-    "cover": "https://dyn1.heritagestatic.com/lf?set=path%5B8%2F8%2F0%2F2%2F8802747%5D%2Csizedata%5B850x600%5D&call=url%5Bfile%3Aproduct.chain%5D",
+    "cover": "https://www.thewrap.com/wp-content/uploads/2015/06/Spider-Man-Movie-Poster.jpg",
     "trailer": "https://www.youtube.com/embed/TYMMOjBUPMM",
     "summary": "Peter Parker's life changes when he is bitten by a genetically altered spider and gains superpowers. He uses his powers to help people and finds himself facing the Green Goblin, an evil maniac.",
     "images": [
@@ -242,24 +242,24 @@
     ],
     "cast": [
       {
-        "name": "Kirsten Dunst",
-        "role": "Mary Jane Watson",
-        "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSPHqUyf71rcC3GnhXbI0CS4dMDwAT67CnBux3Fg_mWZtRBGpjG"
-      },
-      {
-        "name": "Tobey Maguire",
+        "name": "Andrew Garfield",
         "role": "Peter Parker/Spider-Man",
-        "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR8aL--nXG15st6MG-nAXulnYh0tAOg4qgNfhYhF8UOFxpMoLNX"
+        "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSUPaPypoCpBBcuY7IDfIa-EbKiDA49Q2gBc4nPLNkvfaT1u8sF"
       },
       {
-        "name": "Haden Church",
-        "role": "Sand Man",
-        "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcStECc8I6hfZ7gRFKkGLEb1m5rbLYEModWWEFbUYYq0s7LToO30"
+        "name": "Emma Stone",
+        "role": "Gwen Stacy",
+        "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQMymiioIp2PlZ2hDlPeEdggaPhpGqikjOO26ZUzY-GX0KqmEtM"
       },
       {
-        "name": "James Franco",
+        "name": "Rhys Ifans",
+        "role": "Dr.Curtis",
+        "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcReJ5N7RhMReD3wFLb8fp2voZjzZ_r5QQyfzYLkGCtOg67nKGCp"
+      },
+      {
+        "name": "Dane DeHaan",
         "role": "Harry Osborn",
-        "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSgH_fHEjWiPOMyZKGF1cooyoCJQSEXyoipGxMHM7n6bMg19cjh"
+        "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQTvOc-jBvMAhKr2iLT-QfLLCEbuLJAFpLdvopLikhLx-50EPsL"
       }
     ],
     "genre": [
@@ -441,3 +441,163 @@
   }
 ]
 
+[
+  {
+  "id":"100",
+  "rating":[
+    {
+    "userId":"1",
+    "user":"sanjay",
+    "comment":"It is a great movie to watch"
+    }
+]
+},
+{
+  "id":"101",
+  "rating":[
+    {
+    "userId":"1",
+    "user":"sanjay",
+    "comment":"It is a great movie to watch"
+    }
+]
+},
+{
+  "id":"102",
+  "rating":[
+    {
+    "userId":"1",
+    "user":"sanjay",
+    "comment":"It is a great movie to watch"
+    }
+]
+},
+{
+  "id":"103",
+  "rating":[
+    {
+    "userId":"1",
+    "user":"sanjay",
+    "comment":"It is a great movie to watch"
+    }
+]
+},
+{
+  "id":"104",
+  "rating":[
+    {
+    "userId":"1",
+    "user":"sanjay",
+    "comment":"It is a great movie to watch"
+    }
+]
+},
+{
+  "id":"105",
+  "rating":[
+    {
+    "userId":"1",
+    "user":"sanjay",
+    "comment":"It is a great movie to watch"
+    }
+]
+},
+{
+  "id":"106",
+  "rating":[
+    {
+    "userId":"1",
+    "user":"sanjay",
+    "comment":"It is a great movie to watch"
+    }
+]
+},
+{
+  "id":"107",
+  "rating":[
+    {
+    "userId":"1",
+    "user":"sanjay",
+    "comment":"It is a great movie to watch"
+    }
+]
+}
+]
+
+
+
+
+[
+  {
+   "id": "100",
+   "rating": [
+    {
+     "user": "sanjay",
+     "comment": "It is a great movie to watch"
+    }
+   ]
+  },
+  {
+   "id": "101",
+   "rating": [
+    {
+     "user": "sanjay",
+     "comment": "It is a great movie to watch"
+    }
+   ]
+  },
+  {
+   "id": "102",
+   "rating": [
+    {
+     "user": "sanjay",
+     "comment": "It is a great movie to watch"
+    }
+   ]
+  },
+  {
+   "id": "103",
+   "rating": [
+    {
+     "user": "sanjay",
+     "comment": "It is a great movie to watch"
+    }
+   ]
+  },
+  {
+   "id": "104",
+   "rating": [
+    {
+     "user": "sanjay",
+     "comment": "It is a great movie to watch"
+    }
+   ]
+  },
+  {
+   "id": "105",
+   "rating": [
+    {
+     "user": "sanjay",
+     "comment": "It is a great movie to watch"
+    }
+   ]
+  },
+  {
+   "id": "106",
+   "rating": [
+    {
+     "user": "sanjay",
+     "comment": "It is a great movie to watch"
+    }
+   ]
+  },
+  {
+   "id": "107",
+   "rating": [
+    {
+     "user": "sanjay",
+     "comment": "It is a great movie to watch"
+    }
+   ]
+  }
+ ]

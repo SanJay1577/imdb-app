@@ -13,7 +13,7 @@ import { InfoPage } from './InfoPage';
 import { TrailerPage } from './TrailerPage';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ButtonGroup from '@mui/material/ButtonGroup';
-
+import { ReviewPage } from './ReviewPage';
 
 function App() {
 
@@ -51,7 +51,11 @@ const theme = createTheme({
     <Route  path ="/trailer-page/:id">
      <TrailerPage/>
     </Route>
+    <Route path="/review-page/:id">
+    <ReviewPage/>
+    </Route>
   </Switch>
+
  
     </div>
     </ThemeProvider>
