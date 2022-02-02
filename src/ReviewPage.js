@@ -8,30 +8,46 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import TextField from "@mui/material/TextField";
 
+
 export function ReviewPage() {
   const history = useHistory();
   const { id } = useParams();
-  // const [user, setUser] = useState("");
-  // const [content, setContent] = useState("")
+  const {userId} = useParams();
+  const [user, setUser] = useState("");
+  const [content, setContent] = useState("")
+  const[ratings, setRatings] = useState([]);
 
-  //   const addReview = ()=>{
-  //     const newReview ={
+  useEffect(()=>{ 
 
-  //       user:user,
-  //       content:content
-  // };
-  //     console.log(newReview)
-  //     fetch(`https://61e2dd193050a100176822d2.mockapi.io/ratings/${id}`,{
-  //       method:"POST",
-  //       body:JSON.stringify(newReview),
-  //       headers:{
-  //         "Content-Type":"application/json"
-  //       },
-  //     })
-  //     .then((data)=>data.json())
-  //     .then(()=>history.push("/info-page/:id"));
 
-  //   }
+    const getratings=()=>{
+      fetch(`https://61e2dd193050a100176822d2.mockapi.io/ratings/${id}`,
+      {method:"GET"})
+      .then((res)=>res.json())
+      .then((data)=>setRatings(data.rating));
+    };
+   
+    getratings()
+   
+      },[]);
+
+    const addReview = ()=>{
+      const newReview ={
+        user:user,
+        content:content
+  };
+      // console.log(newReview)
+      fetch(`https://61e2dd193050a100176822d2.mockapi.io/ratings/${id}`,{
+        method:"POST",
+        body:JSON.stringify([newReview]),
+        headers:{
+          "Content-Type":"application/json"
+        },
+      })
+      .then((data)=>data.json())
+      .then((date)=>console.log(date))
+
+    }
 
   return (
     <div>
@@ -40,8 +56,8 @@ export function ReviewPage() {
           <TextField
             label="User Name"
             variant="filled"
-            //  value ={user}
-            //  onChange={(event)=>setUser(event.target.value)}
+             value ={user}
+             onChange={(event)=>setUser(event.target.value)}
           />
 
           <TextField
@@ -50,8 +66,8 @@ export function ReviewPage() {
             multiline
             rows={4}
             variant="filled"
-            // value ={content}
-            // onChange={(event)=>setContent(event.target.value)}
+            value ={content}
+            onChange={(event)=>setContent(event.target.value)}
           />
         </CardContent>
         <ButtonGroup
@@ -60,11 +76,13 @@ export function ReviewPage() {
         >
           <Button
             color="warning"
-            onClick={() => history.push(`/info-page/${id}`)}
+            onClick={addReview}
           >
             Submit
           </Button>
         </ButtonGroup>
+
+
       </Card>
     </div>
   );
